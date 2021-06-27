@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+# dehydrated by lukas2511
+# Source: https://dehydrated.io
+#
+# This script is licensed under The MIT License (see LICENSE for more information).
+
+set -e
+set -u
+set -o pipefail
+[[ -n "${ZSH_VERSION:-}" ]] && set -o SH_WORD_SPLIT && set +o FUNCTION_ARGZERO && set -o NULL_GLOB && set -o noglob
+[[ -z "${ZSH_VERSION:-}" ]] && shopt -s nullglob && set -f
+
+umask 077 # paranoid umask, we're creating private keys
+
+# Close weird external file descriptors
+exec 3>&-
+exec 4>&-
+
+VERSION="0.7.1"
+
+# @MERGE
+. split-scripts/find-basedir.sh
+ORIGARGS=("${@}")
+
+# @MERGE
+. util-functions/json.sh
+
+# @MERGE
+. split-scripts/jsonsh.sh
+
+# @MERGE
+. util-functions/misc.sh
+
+# @MERGE
+. util-functions/config.sh
+
+# @MERGE
+. util-functions/misc-2.sh
+
+# @MERGE
+. util-functions/config-2.sh
+
+# @MERGE
+. split-scripts/init_system.sh
+
+# @MERGE
+. util-functions/misc-3.sh
+
+# @MERGE
+. util-functions/http.sh
+
+# @MERGE
+. util-functions/cert.sh
+
+# @MERGE
+. split-scripts/main-functionality.sh
+
+# Determine OS type
+OSTYPE="$(uname)"
+
+if [[ ! "${DEHYDRATED_NOOP:-}" = "NOOP" ]]; then
+  # Run script
+  main "${@:-}"
+fi
+
+# vi: expandtab sw=2 ts=2

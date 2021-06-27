@@ -2,7 +2,7 @@
 
 > This project was forked from [dehydrated-io/dehydrated](https://github.com/dehydrated-io/dehydrated) and subsequently modularized. In order to build the main distributable script, the modular script files are merged using [merge-shell](https://github.com/wpyoga/merge-shell). You can use the `Makefile` to test the correctness of the merged script.
 >
-> Because of the way the the help text is generated, `dehydrated-split` doesn't display it properly.
+> Because of the way the the help text is generated, and also the way the script is being split, `dehydrated-split` currently doesn't display help text properly.
 
 Quick note: dehydrated moved, the license will NOT change, and I will still take care of the project.
 See https://lukas.im/2020/01/30/selling-dehydrated/index.html for more details.

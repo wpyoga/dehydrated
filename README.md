@@ -1,6 +1,8 @@
 # dehydrated [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=23P9DSJBTY7C8)
 
-> This project was forked from [dehydrated-io/dehydrated](https://github.com/dehydrated-io/dehydrated) and subsequently modularized. In order to build the main distributable script, the modular script files are merged using [merge-shell](https://github.com/wpyoga/merge-shell). You can use the `Makefile` to test the correctness of the merged script.
+> This project was forked from [dehydrated-io/dehydrated](https://github.com/dehydrated-io/dehydrated) and subsequently modularized. In order to build the main distributable script, the modular script files are merged using [merge-shell](https://github.com/wpyoga/merge-shell).
+>
+> This `faithful-fork` branch produces a 1:1 reproduction of `dehydrated` as `dehydrated-merged`, you can use the `Makefile` to test the faithfulness of this reproduction.
 >
 > Because of the way the the help text is generated, and also the way the script is being split, `dehydrated-split` currently doesn't display help text properly. However, the merged script still displays the help text properly.
 
